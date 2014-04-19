@@ -22,6 +22,7 @@
 		E72F7F5B1902D7C500BD631C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E72F7F3A1902D7C500BD631C /* UIKit.framework */; };
 		E72F7F631902D7C500BD631C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E72F7F611902D7C500BD631C /* InfoPlist.strings */; };
 		E72F7F651902D7C500BD631C /* Navigation_with_MVCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E72F7F641902D7C500BD631C /* Navigation_with_MVCTests.m */; };
+		E72F7F701902D89900BD631C /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = E72F7F6F1902D89900BD631C /* Course.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		E72F7F601902D7C500BD631C /* Navigation with MVCTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Navigation with MVCTests-Info.plist"; sourceTree = "<group>"; };
 		E72F7F621902D7C500BD631C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E72F7F641902D7C500BD631C /* Navigation_with_MVCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Navigation_with_MVCTests.m; sourceTree = "<group>"; };
+		E72F7F6E1902D89900BD631C /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		E72F7F6F1902D89900BD631C /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,8 @@
 				E72F7F451902D7C500BD631C /* AppDelegate.h */,
 				E72F7F461902D7C500BD631C /* AppDelegate.m */,
 				E72F7F481902D7C500BD631C /* Main.storyboard */,
+				E72F7F6E1902D89900BD631C /* Course.h */,
+				E72F7F6F1902D89900BD631C /* Course.m */,
 				E72F7F4B1902D7C500BD631C /* MasterViewController.h */,
 				E72F7F4C1902D7C500BD631C /* MasterViewController.m */,
 				E72F7F4E1902D7C500BD631C /* DetailViewController.h */,
@@ -258,6 +263,7 @@
 				E72F7F4D1902D7C500BD631C /* MasterViewController.m in Sources */,
 				E72F7F431902D7C500BD631C /* main.m in Sources */,
 				E72F7F501902D7C500BD631C /* DetailViewController.m in Sources */,
+				E72F7F701902D89900BD631C /* Course.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

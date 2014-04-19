@@ -9,6 +9,7 @@
 #import "MasterViewController.h"
 
 #import "DetailViewController.h"
+#import "Course.h"
 
 @interface MasterViewController () {
     NSMutableArray *_objects;
@@ -16,10 +17,11 @@
 @end
 
 @implementation MasterViewController
-
+@synthesize courses=_courses;
 - (void)awakeFromNib
 {
     [super awakeFromNib];
+    courses= [Course getExistingCourses];
 }
 
 - (void)viewDidLoad
@@ -28,8 +30,12 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+   // UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    //self.navigationItem.rightBarButtonItem = addButton;
+}
+-(void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    [[self tableView]reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,7 +44,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewObject:(id)sender
+/*- (void)insertNewObject:(id)sender
 {
     if (!_objects) {
         _objects = [[NSMutableArray alloc] init];
@@ -46,7 +52,7 @@
     [_objects insertObject:[NSDate date] atIndex:0];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-}
+}*/
 
 #pragma mark - Table View
 
@@ -57,15 +63,17 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _objects.count;
+    return [courses count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-    NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = [object description];
+   // NSDate *object = _objects[indexPath.row];
+    //cell.textLabel.text = [object description];
+    
+    [[cell textLabel] setText:[[courses objectAtIndex:[indexPath row]]courseId]];
     return cell;
 }
 
@@ -107,6 +115,8 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSDate *object = _objects[indexPath.row];
         [[segue destinationViewController] setDetailItem:object];
+        [[segue destinationViewController]setEditingCourse:[courses objectAtIndex:[indexPath row]]];
+        
     }
 }
 

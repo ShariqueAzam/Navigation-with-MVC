@@ -10,7 +10,7 @@
 
 @interface MasterViewController : UITableViewController
 {
-    NSMutableArray *courses;
+      NSMutableArray *courses;
 }
 
 @property (nonatomic, assign)NSMutableArray *courses;
